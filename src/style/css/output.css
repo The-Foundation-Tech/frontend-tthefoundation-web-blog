@@ -523,3 +523,15 @@ video {
 .font-semibold {
   font-weight: 600;
 }
+
+@media (min-width: 640px) {
+  .sm\:font-bold {
+    font-weight: 700;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:font-medium {
+    font-weight: 500;
+  }
+}

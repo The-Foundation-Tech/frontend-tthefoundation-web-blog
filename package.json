@@ -1,0 +1,20 @@
+{
+  "name": "frontend-tthefoundation-web-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tw" : "npx tailwindcss -i ./src/style/css/input.css -o ./src/style/css/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/The-Foundation-Tech/frontend-tthefoundation-web-blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/The-Foundation-Tech/frontend-tthefoundation-web-blog/issues"
+  },
+  "homepage": "https://github.com/The-Foundation-Tech/frontend-tthefoundation-web-blog#readme"
+}
