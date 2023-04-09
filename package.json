@@ -5,7 +5,8 @@
   "main": "tailwind.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tw": "npx tailwindcss -i ./src/style/css/input.css -o ./src/style/css/output.css --watch"
+    "tw": "npx tailwindcss -i ./src/style/css/input.css -o ./src/style/css/output.css --watch",
+    "build": "babel src -d public "
   },
   "repository": {
     "type": "git",
