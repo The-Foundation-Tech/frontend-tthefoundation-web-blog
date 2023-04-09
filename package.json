@@ -5,7 +5,7 @@
   "main": "tailwind.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tw" : "npx tailwindcss -i ./src/style/css/input.css -o ./src/style/css/output.css --watch"
+    "tw": "npx tailwindcss -i ./src/style/css/input.css -o ./src/style/css/output.css --watch"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/The-Foundation-Tech/frontend-tthefoundation-web-blog/issues"
   },
-  "homepage": "https://github.com/The-Foundation-Tech/frontend-tthefoundation-web-blog#readme"
+  "homepage": "https://github.com/The-Foundation-Tech/frontend-tthefoundation-web-blog#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
+    "@babel/preset-react": "^7.18.6"
+  }
 }
