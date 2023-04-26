@@ -1,0 +1,14 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Contoh API",
+      "description": "Deskripsi API",
+      "version": "1.0.0",
+      "contact": {
+        "name": "Daffa, Egah, Fauzan",
+        "email": "xxx@gmail.com"
+      }
+    },
+    "servers": [],
+    "paths": {}
+  }
