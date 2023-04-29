@@ -1,10 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
+import { Link, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div>
-      <h1 className=' text-8xl text-green-700'>Test tailwindcss</h1>
+    <div className="App">
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/tentang">Tentang Kami</Link>
+          </li>
+          <li>
+            <Link to="/kegiatan">Kegiatan</Link>
+          </li>
+          <li>
+            <Link to="/donasi">Donasi</Link>
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 }
