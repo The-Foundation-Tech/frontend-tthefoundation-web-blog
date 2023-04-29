@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { Link, Route, Routes } from 'react-router-dom';
+import Home from './Components/Home';
 
 function App() {
   return (
@@ -21,6 +22,10 @@ function App() {
           </li>
         </ul>
       </nav>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
     </div>
   );
 }
