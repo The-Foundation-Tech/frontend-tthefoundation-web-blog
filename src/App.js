@@ -1,42 +1,20 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import { Link, Route, Routes } from 'react-router-dom';
 import Home from './Components/Home';
-import Tentang from './Components/Tentang';
-import Kegiatan from './Components/Kegiatan';
-import Donasi from './Components/Donasi';
-import DetailKegiatan from './Components/DetailKegiatan';
+import Contact from './Components/Contact';
+import About from './Components/About';
+import Navbar from './Components/Navbar/Navbar';
 
 function App() {
   return (
     <div className="App">
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/tentang">Tentang Kami</Link>
-          </li>
-          <li>
-            <Link to="/kegiatan">Kegiatan</Link>
-          </li>
-          <li>
-            <Link to="/donasi">Donasi</Link>
-          </li>
-        </ul>
-      </nav>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-
+      {/* Header Start */}
+      <Navbar />
+      {/* Header End */}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/tentang" element={<Tentang />} />
-        <Route path="/kegiatan" element={<Kegiatan />} />
-        <Route path="kegiatan/:slug" element={<DetailKegiatan />} />
-        <Route path="/donasi" element={<Donasi />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </div>
   );
