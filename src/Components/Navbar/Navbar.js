@@ -9,19 +9,19 @@ const Navbar = () => {
     setNav(!nav);
   };
   return (
-    <div className="flex justify-between items-center h-24 max-w-[1000px] mx-auto px-4 text-white">
+    <div className="flex justify-between items-center h-20 max-w-[1200px] mx-auto mt-3 px-10 text-slate-800 bg-customGray shadow-lg rounded-md">
       <h1 className="w-full text-3xl font-bold text-customRed text-left">Munashoroh.</h1>
       <ul className="hidden md:flex">
-        <li className="p-4">
+        <li className="p-3 border rounded-md border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray">
           <Link to="/">Home</Link>
         </li>
-        <li className="p-4">
+        <li className="p-3 border rounded-md border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray">
           <Link to="/about">About</Link>
         </li>
-        <li className="p-4">
+        <li className="p-3 border rounded-md border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray">
           <Link to="/activities">Activities</Link>
         </li>
-        <li className="p-4">
+        <li className="p-3 border rounded-md border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray">
           <Link to="/contact">Contact</Link>
         </li>
       </ul>
