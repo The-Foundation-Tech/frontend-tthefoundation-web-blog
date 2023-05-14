@@ -4,6 +4,7 @@ import Home from './Components/Home';
 import Contact from './Components/Contact';
 import About from './Components/About';
 import Navbar from './Components/Navbar/Navbar';
+import Hero from './Components/Hero';
 
 function App() {
   return (
@@ -11,6 +12,9 @@ function App() {
       {/* Header Start */}
       <Navbar />
       {/* Header End */}
+      {/* Hero Start */}
+      <Hero />
+      {/* Hero End */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
