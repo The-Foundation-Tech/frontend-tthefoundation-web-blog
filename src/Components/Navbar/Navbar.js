@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { useState } from 'react';
+import logo from '../../img/logo.png';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -10,19 +11,27 @@ const Navbar = () => {
   };
   return (
     <div className="flex justify-between items-center h-20 max-w-[1200px] mx-auto mt-3 px-10 text-slate-800 bg-customGray shadow-lg rounded-md">
-      <h1 className="w-full text-3xl font-bold text-customRed text-left">Munashoroh.</h1>
+      <img src={logo} alt="logo" className="h-full object-contain flex-shrink-0 hover:shadow-md hover:scale-125  rounded-lg transition duration-500" />
       <ul className="hidden md:flex">
-        <li className="p-3 border rounded-md border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray">
-          <Link to="/">Home</Link>
+        <li>
+          <Link className="block p-3 border rounded-md border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray" to="/">
+            Home
+          </Link>
         </li>
-        <li className="p-3 border rounded-md border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray">
-          <Link to="/about">About</Link>
+        <li>
+          <Link className="block p-3 border rounded-md border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray" to="/about">
+            About
+          </Link>
         </li>
-        <li className="p-3 border rounded-md border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray">
-          <Link to="/activities">Activities</Link>
+        <li>
+          <Link className="block p-3 border rounded-md border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray" to="/activities">
+            Activities
+          </Link>
         </li>
-        <li className="p-3 border rounded-md border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray">
-          <Link to="/contact">Contact</Link>
+        <li>
+          <Link className="block p-3 border rounded-md border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray" to="/contact">
+            Contact
+          </Link>
         </li>
       </ul>
       <div onClick={handleNav} className="block md:hidden">
