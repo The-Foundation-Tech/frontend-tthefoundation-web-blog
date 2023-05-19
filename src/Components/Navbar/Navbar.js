@@ -11,8 +11,8 @@ const Navbar = () => {
   };
   return (
     <div className="flex justify-between items-center h-20 max-w-[1200px] mx-auto mt-3 px-10 text-slate-800 bg-customGray shadow-lg rounded-md">
-      <img src={logo} alt="logo" className="h-full object-contain flex-shrink-0 hover:shadow-md hover:scale-125  rounded-lg transition duration-500" />
-      <ul className="hidden md:flex">
+      <img src={logo} alt="logo" className="h-full object-contain flex-shrink-0 bg-customGray hover:shadow-md hover:scale-125 rounded-lg transition duration-500" />
+      <ul className="hidden md:flex font-semibold">
         <li>
           <Link className="block p-3 border rounded-md border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray" to="/">
             Home
