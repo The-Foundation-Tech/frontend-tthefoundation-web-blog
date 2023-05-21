@@ -3,18 +3,19 @@ import './App.css';
 import Home from './Components/Home';
 import Contact from './Components/Contact';
 import About from './Components/About';
-import Navbar from './Components/Navbar/Navbar';
-import Hero from './Components/Hero';
+import Hero from './Components/Main/Hero';
+import Navbar from './Components/Main/Navbar';
+import Fasilitas from './Components/Main/Fasilitas';
+import Berita from './Components/Main/Berita';
 
 function App() {
   return (
     <div className="App">
-      {/* Header Start */}
       <Navbar />
-      {/* Header End */}
-      {/* Hero Start */}
       <Hero />
-      {/* Hero End */}
+      <Fasilitas />
+      <Berita />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
