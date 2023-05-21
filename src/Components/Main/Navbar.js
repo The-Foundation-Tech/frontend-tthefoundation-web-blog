@@ -1,63 +1,94 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import logo from '../../img/logo.png';
 
 const Navbar = () => {
-  const [nav, setNav] = useState(false);
+  const [nav, setNav] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Periksa posisi scroll saat ini
+      const currentScrollPos = window.pageYOffset;
+
+      // Tentukan aturan untuk mengubah keadaan isScrolled
+      if (currentScrollPos > prevScrollPos) {
+        // Scroll ke bawah
+        setIsScrolled(true);
+      } else {
+        // Scroll ke atas
+        setIsScrolled(false);
+      }
+
+      // Perbarui posisi scroll sebelumnya
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [prevScrollPos]);
 
   const handleNav = () => {
     setNav(!nav);
   };
 
-  const menus = ['Profil', 'Informasi', 'Galeri', 'Kontak'];
+
+
+  // Navigasi ke path yang diinginkan
+  const pathClick = (event) =>{
+    // Mengambil id dari path yang dituju 
+    const targetPath = event.target.id
+    //melakukan navigasi
+    navigate(targetPath)
+    //untuk menghilangkan tampilan navigasi di layar small
+    if(nav == true){
+      setNav(!nav);
+    }
+  }
+
+
+
   return (
     <section>
-      <div className="flex justify-between items-center h-20 max-w-[1200px] mx-auto mt-3 px-10 text-slate-800 bg-customGray shadow-lg rounded-md">
-        <img src={logo} alt="logo" className="h-full object-contain flex-shrink-0 bg-customGray hover:shadow-md hover:scale-125 rounded-lg transition duration-500" />
-        <ul className="hidden md:flex font-semibold">
-          <li>
-            <Link className="block p-3 border rounded-md border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray" to="/">
-              Profil
-            </Link>
-          </li>
-          <li>
-            <Link className="block p-3 border rounded-md border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray" to="/about">
-              Informasi
-            </Link>
-          </li>
-          <li>
-            <Link className="block p-3 border rounded-md border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray" to="/activities">
-              Galeri
-            </Link>
-          </li>
-          <li>
-            <Link className="block p-3 border rounded-md border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray" to="/contact">
-              Kontak
-            </Link>
-          </li>
-        </ul>
-        <div onClick={handleNav} className="block md:hidden">
-          {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
+      <nav className={!nav? ` fixed ${isScrolled ? ' opacity-25' : ' opacity-100'}  duration-300 h-20 left-[50%] lg:max-w-[1200px] w-full -translate-x-[50%] mt-3 px-10 text-slate-800  bg-customGray border-2 border-inherit shadow-lg rounded-md` : " fixed left-[40%] right-0 border-2 border-inherit duration-300 h-full bg-customGray"}>
+        <div className={!nav? "flex gap-4 items-center justify-between h-full z-50":" flex-col"}>
+          <h1 className={!nav?'hidden':" text-red-500 font-semibold text-3xl mt-8"}>Munashoroh</h1>
+          <img src={logo} alt="logo" className={!nav?"h-full  object-contain left-0 flex-shrink-0 bg-customGray hover:shadow-md cursor-pointer":"hidden "} />
+          <div className={'h-20 mt-4'}>
+              <ul className={!nav? "md:flex hidden font-semibold cursor-pointer  ":""}>
+                <li id="/" onClick={pathClick} className="block p-3 border rounded-md border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray">
+                    Profil
+                </li>
+                <li id="/about" onClick={pathClick} className="block p-3 border rounded-md border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray">
+                    Informasi
+                </li>
+                <li id="/activities" onClick={pathClick} className="block p-3 border rounded-md border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray"> 
+                    Galeri
+                </li>
+                <li id="contact" onClick={pathClick} className="block p-3 border rounded-md border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray">
+                    Kontak
+                </li>
+              </ul>
+          </div>
+          <div onClick={handleNav} className={!nav? "block md:hidden " : "block md:hidden fixed top-3 right-3"}>
+            {nav ? <AiOutlineClose size={30} /> : <AiOutlineMenu size={30} />}
+          </div>
         </div>
-        <div className={nav ? 'fixed left-0 top-0 w-[60%] h-full border-r border-r-customGray bg-customGray ease-in-out duration-500' : 'fixed left-[-100%]'}>
-          <h1 className="w-full text-3xl font-bold text-customRed pt-3">Munashoroh.</h1>
-          <ul className="uppercase p-4 text-customNavy">
-            <li className="p-4 border-b border-gray-600">
-              <Link to="/">Home</Link>
-            </li>
-            <li className="p-4 border-b border-gray-600">
-              <Link to="/about">About</Link>
-            </li>
-            <li className="p-4 border-b border-gray-600">
-              <Link to="/activities">Activities</Link>
-            </li>
-            <li className="p-4 border-b border-gray-600">
-              <Link to="/contact">Contact</Link>
-            </li>
-          </ul>
-        </div>
-      </div>
+
+      </nav>
+
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <br></br>
+
     </section>
   );
 };
