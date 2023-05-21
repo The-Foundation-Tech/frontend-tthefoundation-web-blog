@@ -6,7 +6,7 @@ const Berita = () => {
       <div className="container flex flex-wrap justify-around mt-5">
         <div className="max-w-[300px] rounded overflow-hidden shadow-lg bg-customGray border border-slate-900 mt-5">
           <div className=' overflow-hidden'>
-            <img className="w-full hover:scale-125 opacity-[0.85] cursor-pointer hover:opacity-100" src={berita1} alt="News" />
+            <img className="w-full hover:scale-125 opacity-[0.85] duration-500 cursor-pointer hover:opacity-100" src={berita1} alt="News" />
           </div>
           <div className="px-6 py-4">
             <div className="font-bold text-xl mb-2">News Title</div>
@@ -15,7 +15,7 @@ const Berita = () => {
         </div>
         <div className="max-w-[300px] rounded overflow-hidden shadow-lg bg-customGray border border-slate-900 mt-5">
           <div className=' overflow-hidden'>
-            <img className="w-full hover:scale-125 opacity-[0.85] cursor-pointer hover:opacity-100" src={berita1} alt="News" />
+            <img className="w-full hover:scale-125 opacity-[0.85] duration-500 cursor-pointer hover:opacity-100" src={berita1} alt="News" />
           </div>
           <div className="px-6 py-4">
             <div className="font-bold text-xl mb-2">News Title</div>
@@ -24,7 +24,7 @@ const Berita = () => {
         </div>
         <div className="max-w-[300px] rounded overflow-hidden shadow-lg bg-customGray border border-slate-900 mt-5">
           <div className=' overflow-hidden'>
-            <img className="w-full hover:scale-125 opacity-[0.85] cursor-pointer hover:opacity-100" src={berita1} alt="News" />
+            <img className="w-full hover:scale-125 opacity-[0.85] duration-500 cursor-pointer hover:opacity-100" src={berita1} alt="News" />
           </div>
           <div className="px-6 py-4">
             <div className="font-bold text-xl mb-2">News Title</div>
@@ -33,7 +33,7 @@ const Berita = () => {
         </div>
         <div className="max-w-[300px] rounded overflow-hidden shadow-lg bg-customGray border border-slate-900 mt-5">
           <div className=' overflow-hidden'>
-            <img className="w-full hover:scale-125 opacity-[0.85] cursor-pointer hover:opacity-100" src={berita1} alt="News" />
+            <img className="w-full hover:scale-125 opacity-[0.85] duration-500 cursor-pointer hover:opacity-100" src={berita1} alt="News" />
           </div>
           <div className="px-6 py-4">
             <div className="font-bold text-xl mb-2">News Title</div>
