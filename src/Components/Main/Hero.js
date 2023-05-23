@@ -14,7 +14,7 @@ const Hero = () => {
             <button className="font-semibold text-md md:text-lg bg-red-600 text-white py-2 px-5 mt-10 hover:bg-red-800 hover:shadow-xl rounded-lg hover:scale-110 transition duration-500">Daftar Disini</button>
           </div>
           <div className="order-1 lg:order-2">
-            <img className={'rounded-xl border-2 border-white h-80 w-80 object-cover lg:w-[400px] lg:h-[400px] hover:scale-110 transition duration-500'} src={hero} />
+            <img className="rounded-xl border-2 border-white h-80 w-80 object-cover lg:w-[400px] lg:h-[400px] hover:scale-110 transition duration-500" src={hero} />
           </div>
         </div>
       </div>
