@@ -7,6 +7,8 @@ import Hero from './Components/Main/Hero';
 import Navbar from './Components/Main/Navbar';
 import Fasilitas from './Components/Main/Fasilitas';
 import Berita from './Components/Main/Berita';
+import Testimoni from './Components/Main/Testimoni';
+import Footer from './Components/Main/Footer';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
       <Hero />
       <Fasilitas />
       <Berita />
+      <Testimoni />
+      <Footer />
 
       <Routes>
         <Route path="/" element={<Home />} />

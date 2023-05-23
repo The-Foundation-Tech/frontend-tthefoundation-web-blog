@@ -3,7 +3,7 @@ import { GrCafeteria } from 'react-icons/gr';
 import { MdLocalLaundryService } from 'react-icons/md';
 const Fasilitas = () => {
   return (
-    <section className="mt-10 pt-10 bg-customGray pb-[96px]">
+    <section className="mt-10 py-10 bg-customGray">
       <h1 className="text-3xl font-semibold text-customGray w-40 h-10 mx-auto py-auto bg-customNavy shadow-md rounded-full">Fasilitas</h1>
 
       <p className="mt-4">
