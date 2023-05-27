@@ -6,7 +6,7 @@ const Fasilitas = () => {
     <section className="mt-10 py-10 bg-customGray">
       <h1 className="text-3xl font-semibold text-customGray w-fit px-10 h-10 mx-auto py-auto bg-customNavy shadow-md rounded-full">Fasilitas</h1>
 
-      <p className="mt-4">
+      <p className="mt-4 mx-10">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere asperiores aperiam quo laboriosam neque assumenda! Adipisci amet fugiat praesentium maiores sequi necessitatibus assumenda similique voluptas perferendis, porro
         laboriosam temporibus omnis?
       </p>
