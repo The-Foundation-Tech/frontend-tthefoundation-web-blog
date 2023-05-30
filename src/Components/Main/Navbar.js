@@ -4,10 +4,10 @@ import { useState, useEffect } from 'react';
 import logo from '../../img/logo.png';
 
 const Navbar = () => {
-  const [nav, setNav] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
+  const [nav, setNav] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,53 +38,53 @@ const Navbar = () => {
     setNav(!nav);
   };
 
-
-
   // Navigasi ke path yang diinginkan
-  const pathClick = (event) =>{
-    // Mengambil id dari path yang dituju 
-    const targetPath = event.target.id
+  const pathClick = (event) => {
+    // Mengambil id dari path yang dituju
+    const targetPath = event.target.id;
     //melakukan navigasi
-    navigate(targetPath)
+    navigate(targetPath);
     //untuk menghilangkan tampilan navigasi di layar small
-    if(nav == true){
+    if (nav == true) {
       setNav(!nav);
     }
-  }
-
-
+  };
 
   return (
     <section>
-      <nav className={!nav? ` fixed ${isScrolled ? ' opacity-25' : ' opacity-100'}  duration-300 h-20 left-[50%] lg:max-w-[1200px] w-full -translate-x-[50%] mt-3 px-10 text-slate-800  bg-customGray border-2 border-inherit shadow-lg rounded-md` : " fixed left-[40%] right-0 border-2 border-inherit duration-300 h-full bg-customGray"}>
-        <div className={!nav? "flex gap-4 items-center justify-between h-full z-50":" flex-col"}>
-          <h1 className={!nav?'hidden':" text-red-500 font-semibold text-3xl mt-8"}>Munashoroh</h1>
-          <img src={logo} alt="logo" className={!nav?"h-full  object-contain left-0 flex-shrink-0 bg-customGray hover:shadow-md cursor-pointer":"hidden "} />
+      <nav
+        className={
+          !nav
+            ? ` fixed ${isScrolled ? ' opacity-25' : ' opacity-100'}  duration-300 h-20 left-[50%] lg:max-w-[1200px] w-full -translate-x-[50%] mt-3 px-10 text-slate-800  bg-customGray border-2 border-inherit shadow-lg rounded-md`
+            : ' fixed left-[40%] right-0 border-2 border-inherit duration-300 h-full bg-customGray'
+        }
+      >
+        <div className={!nav ? 'flex gap-4 items-center justify-between h-full z-50' : ' flex-col'}>
+          <h1 className={!nav ? 'hidden' : ' text-red-500 font-semibold text-3xl mt-8'}>Munashoroh</h1>
+          <img src={logo} alt="logo" className={!nav ? 'h-full  object-contain left-0 flex-shrink-0 bg-customGray hover:shadow-md cursor-pointer' : 'hidden '} />
           <div className={'h-20 mt-4'}>
-              <ul className={!nav? "md:flex hidden font-semibold cursor-pointer  ":""}>
-                <li id="/" onClick={pathClick} className="block p-3 border rounded-md border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray">
-                    Profil
-                </li>
-                <li id="/about" onClick={pathClick} className="block p-3 border rounded-md border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray">
-                    Informasi
-                </li>
-                <li id="/activities" onClick={pathClick} className="block p-3 border rounded-md border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray"> 
-                    Galeri
-                </li>
-                <li id="contact" onClick={pathClick} className="block p-3 border rounded-md border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray">
-                    Kontak
-                </li>
-              </ul>
+            <ul className={!nav ? 'md:flex hidden font-semibold cursor-pointer  ' : ''}>
+              <li id="/" onClick={pathClick} className="block p-3 border rounded-md border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray">
+                Profil
+              </li>
+              <li id="/about" onClick={pathClick} className="block p-3 border rounded-md border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray">
+                Informasi
+              </li>
+              <li id="/activities" onClick={pathClick} className="block p-3 border rounded-md border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray">
+                Galeri
+              </li>
+              <li id="contact" onClick={pathClick} className="block p-3 border rounded-md border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray">
+                Kontak
+              </li>
+            </ul>
           </div>
-          <div onClick={handleNav} className={!nav? "block md:hidden " : "block md:hidden fixed top-3 right-3"}>
+          <div onClick={handleNav} className={!nav ? 'block md:hidden ' : 'block md:hidden fixed top-3 right-3'}>
             {nav ? <AiOutlineClose size={30} /> : <AiOutlineMenu size={30} />}
           </div>
         </div>
-
       </nav>
 
       <br></br>
-
     </section>
   );
 };
