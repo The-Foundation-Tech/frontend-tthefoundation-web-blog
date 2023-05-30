@@ -4,9 +4,9 @@ import Contact from './Components/Contact';
 import About from './Components/About';
 import Hero from './Components/Main/Hero';
 import Navbar from './Components/Main/Navbar';
-import Fasilitas from './Components/Main/Fasilitas';
+import Program from './Components/Main/Program';
 import Berita from './Components/Main/Berita';
-import Testimoni from './Components/Main/Testimoni';
+import InfoGraf from './Components/Main/InfoGraf';
 import Footer from './Components/Main/Footer';
 
 function App() {
@@ -14,9 +14,9 @@ function App() {
     <div className="App">
       <Navbar />
       <Hero />
-      <Fasilitas />
+      <Program />
       <Berita />
-      <Testimoni />
+      <InfoGraf />
       <Footer />
 
       <Routes>
