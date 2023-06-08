@@ -3,7 +3,7 @@ import hero from '../../img/hero.jpg';
 const Hero = () => {
   return (
     <section>
-      <div className="container mt-10 px-3 py-5 lg:py-1">
+      <div className="container mt-24 px-3 py-5 lg:py-1">
         <div className="grid lg:grid-cols-2 items-center justify-items-center">
           <div className="order-2 lg:order-1 flex flex-col justify-center items-center mx-2 md:ml-10">
             <p className="w-full text-center text-lg font-bold md:text-3xl text-customGray mt-10">Asrama Mahasiswi YMI</p>

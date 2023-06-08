@@ -56,7 +56,7 @@ const Navbar = () => {
 
   return (
     <section>
-      <nav className={!nav? ` fixed ${isScrolled ? ' opacity-25' : ' opacity-100'}  duration-300 h-20 left-[50%] lg:max-w-[1200px] w-full -translate-x-[50%] mt-3 px-10 text-slate-800  bg-customGray border-2 border-inherit shadow-lg rounded-md` : " fixed left-[40%] right-0 border-2 border-inherit duration-300 h-full bg-customGray"}>
+      <nav className={!nav? ` fixed ${isScrolled ? ' opacity-50' : ' opacity-100'}  duration-300 h-20 left-[50%] lg:max-w-[1200px] w-full -translate-x-[50%] mt-3 px-10 text-slate-800  bg-customGray border-2 border-inherit shadow-lg rounded-md` : " fixed left-[40%] right-0 border-2 border-inherit duration-300 h-full bg-customGray"}>
         <div className={!nav? "flex gap-4 items-center justify-between h-full z-50":" flex-col"}>
           <h1 className={!nav?'hidden':" text-red-500 font-semibold text-3xl mt-8"}>Munashoroh</h1>
           <img src={logo} alt="logo" className={!nav?"h-full  object-contain left-0 flex-shrink-0 bg-customGray hover:shadow-md cursor-pointer":"hidden "} />
