@@ -5,7 +5,7 @@ const Berita = () => {
       <h1 className="text-3xl font-semibold text-customNavy w-fit px-10 h-10 mx-auto py-auto bg-customGray shadow-md rounded-full">Berita dan Kegiatan</h1>
       <div className="container flex flex-wrap justify-around mt-5">
         <div className="max-w-[300px] rounded overflow-hidden shadow-lg bg-customGray border border-slate-900 mt-5">
-          <div className=' overflow-hidden'>
+          <div className=" overflow-hidden">
             <img className="w-full hover:scale-125 opacity-[0.85] duration-500 cursor-pointer hover:opacity-100" src={berita1} alt="News" />
           </div>
           <div className="px-6 py-4">
@@ -14,7 +14,7 @@ const Berita = () => {
           </div>
         </div>
         <div className="max-w-[300px] rounded overflow-hidden shadow-lg bg-customGray border border-slate-900 mt-5">
-          <div className=' overflow-hidden'>
+          <div className=" overflow-hidden">
             <img className="w-full hover:scale-125 opacity-[0.85] duration-500 cursor-pointer hover:opacity-100" src={berita1} alt="News" />
           </div>
           <div className="px-6 py-4">
@@ -23,7 +23,7 @@ const Berita = () => {
           </div>
         </div>
         <div className="max-w-[300px] rounded overflow-hidden shadow-lg bg-customGray border border-slate-900 mt-5">
-          <div className=' overflow-hidden'>
+          <div className=" overflow-hidden">
             <img className="w-full hover:scale-125 opacity-[0.85] duration-500 cursor-pointer hover:opacity-100" src={berita1} alt="News" />
           </div>
           <div className="px-6 py-4">
@@ -32,7 +32,7 @@ const Berita = () => {
           </div>
         </div>
         <div className="max-w-[300px] rounded overflow-hidden shadow-lg bg-customGray border border-slate-900 mt-5">
-          <div className=' overflow-hidden'>
+          <div className=" overflow-hidden">
             <img className="w-full hover:scale-125 opacity-[0.85] duration-500 cursor-pointer hover:opacity-100" src={berita1} alt="News" />
           </div>
           <div className="px-6 py-4">
