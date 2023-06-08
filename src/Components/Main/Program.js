@@ -9,7 +9,7 @@ const Program = () => {
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere asperiores aperiam quo laboriosam neque assumenda! Adipisci amet fugiat praesentium maiores sequi necessitatibus assumenda similique voluptas perferendis, porro
         laboriosam temporibus omnis?
       </p>
-      <div className="container h-full flex flex-wrap justify-center mt-10 ">
+      <div className="container mx-auto h-full flex flex-wrap justify-center mt-10 ">
         <div className="flex flex-col justify-center items-center m-7 shadow-md rounded-md p-3">
           <div>
             <h4 className="text-2xl font-semibold text-customNavy">Kemanusiaan</h4>
