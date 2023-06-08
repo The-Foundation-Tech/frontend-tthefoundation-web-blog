@@ -3,7 +3,7 @@ const Berita = () => {
   return (
     <section className="mt-10">
       <h1 className="text-3xl font-semibold text-customNavy w-fit px-10 h-10 mx-auto py-auto bg-customGray shadow-md rounded-full">Berita dan Kegiatan</h1>
-      <div className="container flex flex-wrap justify-around mt-5">
+      <div className="container flex flex-wrap justify-around mt-5 mx-auto">
         <div className="max-w-[300px] rounded overflow-hidden shadow-lg bg-customGray border border-slate-900 mt-5">
           <div className="overflow-hidden">
             <img className="w-full hover:scale-110 duration-1000" src={berita1} alt="News" />
