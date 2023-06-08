@@ -37,7 +37,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <img src={mitra} className="mix-blend-mode: screen;" />
+      <img src={mitra} className="mx-auto mix-blend-mode: screen;" />
     </footer>
   );
 };
