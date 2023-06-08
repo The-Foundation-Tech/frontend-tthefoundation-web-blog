@@ -12,7 +12,7 @@ const Program = () => {
       <div className="container h-full flex flex-wrap justify-center mt-10 ">
         <div className="flex flex-col justify-center items-center m-7 shadow-md rounded-md p-3">
           <div>
-            <h4 className="text-2xl font-semibold text-customNavy">LeaderShip Camp</h4>
+            <h4 className="text-2xl font-semibold text-customNavy">Kemanusiaan</h4>
           </div>
           <div className="mt-5">
             <img src={camp} alt="camp" className="w-72 h-72 object-cover rounded-md" />
@@ -20,7 +20,7 @@ const Program = () => {
         </div>
         <div className="flex flex-col justify-center items-center m-7 shadow-md rounded-md p-3">
           <div>
-            <h4 className="text-2xl font-semibold text-customNavy">LeaderShip Camp</h4>
+            <h4 className="text-2xl font-semibold text-customNavy">Pendidikan</h4>
           </div>
           <div className="mt-5">
             <img src={camp} alt="camp" className="w-72 h-72 object-cover rounded-md" />
@@ -28,7 +28,7 @@ const Program = () => {
         </div>
         <div className="flex flex-col justify-center items-center m-7 shadow-md rounded-md p-3">
           <div>
-            <h4 className="text-2xl font-semibold text-customNavy">LeaderShip Camp</h4>
+            <h4 className="text-2xl font-semibold text-customNavy">Ekonomi</h4>
           </div>
           <div className="mt-5">
             <img src={camp} alt="camp" className="w-72 h-72 object-cover rounded-md" />

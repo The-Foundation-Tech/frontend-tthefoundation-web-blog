@@ -1,4 +1,5 @@
 import ymi from '../../img/ymi.png';
+import mitra from '../../img/mitra.png';
 import { BsInstagram, BsFacebook, BsWhatsapp } from 'react-icons/bs';
 
 const Footer = () => {
@@ -36,6 +37,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <img src={mitra} className="mix-blend-mode: screen;" />
     </footer>
   );
 };
