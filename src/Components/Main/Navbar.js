@@ -2,21 +2,48 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { BiDonateHeart } from 'react-icons/bi';
+import { MdOutlineArrowDropDown } from 'react-icons/md';
 import { useState, useEffect } from 'react';
 import logo from '../../img/logo.png';
 
+//ITEM NAVBAR
+const menuItems = [
+  { id: '/', label: 'Profil', type: 'dropdown', subItems: ['Sejarah dan Profil Yayasan', 'Visi dan Misi Yayasan', 'Struktur Organisasi'] },
+  { id: '/about', label: 'Informasi', type: 'dropdown', subItems: ['Cabang', 'Berita', 'FAQ'] },
+  { id: '/activities', type: 'link', label: 'Galeri' },
+  { id: 'contact', type: 'link', label: 'Kontak' },
+];
+
+const NavItem = ({ menuItem }) => {
+  return (
+    <li key={menuItem.id} className="relative group">
+      {menuItem.type === 'link' ? (
+        <Link to={menuItem.id} className="block p-3 border rounded-sm border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray ">
+          {menuItem.label}
+        </Link>
+      ) : (
+        <>
+          <Link to={menuItem.id} className="flex items-center p-3 border rounded-sm border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray ">
+            {menuItem.label} <MdOutlineArrowDropDown />
+          </Link>
+          <div className="hidden bg-customGray transition-all duration-500 pt-4 absolute bottom-0 right-0 translate-y-full group-hover:block w-max">
+            <ul className="flex flex-col shadow-lg border">
+              {menuItem.subItems.map((sub) => {
+                return <Link className="hover:bg-customNavy hover:text-white px-4 py-2">{sub}</Link>;
+              })}
+            </ul>
+          </div>
+        </>
+      )}
+    </li>
+  );
+};
+
+// MAIN
 const Navbar = () => {
   const [nav, setNavVisible] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
-
-  //ITEM NAVBAR
-  const menuItems = [
-    { id: '/', label: 'Profil', subItems: ['Sejarah dan profil yayasan', 'Visi dan misi yayasan', 'Struktur organisasi'] },
-    { id: '/about', label: 'Informasi', subItems: ['Cabang', 'Berita', 'FAQ'] },
-    { id: '/activities', label: 'Galeri' },
-    { id: 'contact', label: 'Kontak' },
-  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,7 +76,7 @@ const Navbar = () => {
 
   return (
     <section>
-      <header className={`${isScrolled ? 'opacity-80' : 'opacity-100'} container fixed flex justify-between top-0 h-20 max-w-full px-10 text-slate-800 bg-customGray border-2 shadow-lg z-10 items-center`}>
+      <header className={`${isScrolled ? 'md:opacity-80' : 'md:opacity-100'} container fixed flex justify-between top-0 h-20 max-w-full px-10 text-slate-800 bg-customGray border-2 shadow-lg z-10 items-center`}>
         <div>
           <img src={logo} alt="logo" className="h-20" />
         </div>
@@ -57,13 +84,11 @@ const Navbar = () => {
         <div
           className={`${
             !nav ? '-right-full' : 'right-0'
-          } mt-[80px] md:mt-0 flex flex-col md:flex-row w-full md:w-auto justify-center fixed top-0 bottom-0 md:static gap-x-9 items-center z-[49] bg-blue-200 md:bg-inherit transition-all duration-300 ease-in-out`}
+          } mt-[80px] md:mt-0 flex flex-col md:flex-row w-full md:w-auto justify-center fixed top-0 bottom-0 md:static gap-x-9 items-center z-[49] bg-gray-200 md:bg-inherit transition-all duration-300 ease-in-out`}
         >
           <ul className="flex flex-col md:flex-row gap-x-3 gap-y-3 font-semibold">
             {menuItems.map((menuItem) => (
-              <li key={menuItem.id} className="block p-3 border rounded-sm border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray group relative">
-                <Link to={menuItem.id}>{menuItem.label}</Link>
-              </li>
+              <NavItem menuItem={menuItem} />
             ))}
           </ul>
           <div>
