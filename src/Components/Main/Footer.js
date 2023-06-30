@@ -6,12 +6,12 @@ const Footer = () => {
   return (
     <footer className="bg-customBlue py-4 text-white">
       <div className="flex mx-10 items-center">
-        <div className="flex items-center w-full gap-3">
-          <img src={ymi} className="w-20 h-20 sm:w-24 bg-white rounded-md object-contain" />
+        <div className="flex items-center w-1/2 gap-3 bg-red-800">
+          <img src={ymi} className="w-14 h-14 sm:w-24 sm:h-24 bg-white rounded-md object-contain" />
           <p className="text-sm">Hak Cipta &copy; 2023 Yayasan Munashoroh Indonesia.</p>
         </div>
 
-        <div className="container ml-3 flex items-center justify-between">
+        <div className="container ml-3 flex items-center justify-between bg-red-800">
           <div className="flex-col">
             <div className="m-2">
               <a href="#" className="flex gap-2">
@@ -33,7 +33,9 @@ const Footer = () => {
             </div>
           </div>
           <div className="mx-auto">
-            <h1 className="text-2xl">Donasi</h1>
+            <div className="border-2 p-2 rounded-sm hover:bg-customNavy transition duration-100">
+              <h1 className="text-2xl">Donasi Disini</h1>
+            </div>
           </div>
         </div>
       </div>

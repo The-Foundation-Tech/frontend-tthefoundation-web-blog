@@ -9,6 +9,10 @@ module.exports = {
         customRed: '#DA1212',
         customGray: '#EEEEEE',
       },
+      fontFamily: {
+        opensans: ["'Lato'", 'sans-serif'],
+        lato: ["'Open Sans'", 'sans-serif'],
+      },
     },
   },
   plugins: [],

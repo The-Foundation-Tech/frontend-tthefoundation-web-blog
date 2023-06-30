@@ -6,17 +6,17 @@ import Hero from './Components/Main/Hero';
 import Navbar from './Components/Main/Navbar';
 import Program from './Components/Main/Program';
 import Berita from './Components/Main/Berita';
-import InfoGraf from './Components/Main/InfoGraf';
 import Footer from './Components/Main/Footer';
+import Cabang from './Components/Main/Cabang';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App font-opensans">
       <Navbar />
       <Hero />
       <Program />
       <Berita />
-      <InfoGraf />
+      <Cabang />
       <Footer />
 
       <Routes>

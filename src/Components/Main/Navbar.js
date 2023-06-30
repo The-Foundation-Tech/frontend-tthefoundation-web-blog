@@ -1,13 +1,22 @@
-import { Link, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import { BiDonateHeart } from 'react-icons/bi';
 import { useState, useEffect } from 'react';
 import logo from '../../img/logo.png';
 
 const Navbar = () => {
-  const [nav, setNav] = useState(false);
+  const [nav, setNavVisible] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
-  const navigate = useNavigate();
+
+  //ITEM NAVBAR
+  const menuItems = [
+    { id: '/', label: 'Profil', subItems: ['Sejarah dan profil yayasan', 'Visi dan misi yayasan', 'Struktur organisasi'] },
+    { id: '/about', label: 'Informasi', subItems: ['Cabang', 'Berita', 'FAQ'] },
+    { id: '/activities', label: 'Galeri' },
+    { id: 'contact', label: 'Kontak' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,56 +44,36 @@ const Navbar = () => {
   }, [prevScrollPos]);
 
   const handleNav = () => {
-    setNav(!nav);
-  };
-
-  // Navigasi ke path yang diinginkan
-  const pathClick = (event) => {
-    // Mengambil id dari path yang dituju
-    const targetPath = event.target.id;
-    //melakukan navigasi
-    navigate(targetPath);
-    //untuk menghilangkan tampilan navigasi di layar small
-    if (nav === true) {
-      setNav(!nav);
-    }
+    setNavVisible(!nav);
   };
 
   return (
     <section>
-      <nav
-        className={
-          !nav
-            ? ` fixed ${isScrolled ? ' opacity-80' : ' opacity-100'}  duration-300 h-20 left-[50%] lg:max-w-[1200px] w-full -translate-x-[50%] mt-3 px-10 text-slate-800  bg-customGray border-2 border-inherit shadow-lg rounded-md z-10`
-            : ' fixed left-[40%] right-0 border-2 border-inherit duration-300 h-full bg-customGray z-10'
-        }
-      >
-        <div className={!nav ? 'flex gap-4 items-center justify-between h-full' : 'flex-col'}>
-          <h1 className={!nav ? 'hidden' : ' text-red-500 font-semibold text-3xl mt-8'}>Munashoroh</h1>
-          <img src={logo} alt="logo" className={!nav ? 'h-full  object-contain left-0 flex-shrink-0 bg-customGray hover:shadow-md cursor-pointer' : 'hidden '} />
-          <div className={'h-20 mt-4'}>
-            <ul className={!nav ? 'md:flex hidden font-semibold cursor-pointer  ' : ''}>
-              <li id="/" onClick={pathClick} className="block p-3 border rounded-md border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray">
-                Profil
+      <header className={`${isScrolled ? 'opacity-80' : 'opacity-100'} container fixed flex justify-between top-0 h-20 max-w-full px-10 text-slate-800 bg-customGray border-2 shadow-lg z-10 items-center`}>
+        <div>
+          <img src={logo} alt="logo" className="h-20" />
+        </div>
+        <div className="z-50 md:hidden">{!nav ? <AiOutlineMenu size={30} onClick={handleNav} /> : <AiOutlineClose size={30} onClick={handleNav} />}</div>
+        <div
+          className={`${
+            !nav ? '-right-full' : 'right-0'
+          } mt-[80px] md:mt-0 flex flex-col md:flex-row w-full md:w-auto justify-center fixed top-0 bottom-0 md:static gap-x-9 items-center z-[49] bg-blue-200 md:bg-inherit transition-all duration-300 ease-in-out`}
+        >
+          <ul className="flex flex-col md:flex-row gap-x-3 gap-y-3 font-semibold">
+            {menuItems.map((menuItem) => (
+              <li key={menuItem.id} className="block p-3 border rounded-sm border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray group relative">
+                <Link to={menuItem.id}>{menuItem.label}</Link>
               </li>
-              <li id="/about" onClick={pathClick} className="block p-3 border rounded-md border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray">
-                Informasi
-              </li>
-              <li id="/activities" onClick={pathClick} className="block p-3 border rounded-md border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray">
-                Galeri
-              </li>
-              <li id="contact" onClick={pathClick} className="block p-3 border rounded-md border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray">
-                Kontak
-              </li>
-            </ul>
-          </div>
-          <div onClick={handleNav} className={!nav ? 'block md:hidden ' : 'block md:hidden fixed top-3 right-3'}>
-            {nav ? <AiOutlineClose size={30} /> : <AiOutlineMenu size={30} />}
+            ))}
+          </ul>
+          <div>
+            <button className=" mt-5 md:mt-0 border-2 border-customNavy px-5 rounded-full font-semibold hover:bg-blue-500 hover:text-white transition-all duration-300 flex">
+              <BiDonateHeart size={30} />
+              <div className="pt-1 pl-1">Donasi</div>
+            </button>
           </div>
         </div>
-      </nav>
-
-      <br></br>
+      </header>
     </section>
   );
 };
