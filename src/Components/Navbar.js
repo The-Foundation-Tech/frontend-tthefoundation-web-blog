@@ -3,18 +3,23 @@ import { Link } from 'react-router-dom';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { BiDonateHeart } from 'react-icons/bi';
 import { MdOutlineArrowDropDown } from 'react-icons/md';
-import { useState, useEffect } from 'react';
-import logo from '../../img/logo.png';
+import { useState } from 'react';
+import { images } from '../constants';
 
 //ITEM NAVBAR
 const menuItems = [
-  { id: '/', label: 'Profil', type: 'dropdown', subItems: ['Sejarah dan Profil Yayasan', 'Visi dan Misi Yayasan', 'Struktur Organisasi'] },
+  { id: '/', label: 'Profil', type: 'dropdown', subItems: ['Sejarah dan Profil', 'Visi dan Misi', 'Struktur Organisasi'] },
   { id: '/about', label: 'Informasi', type: 'dropdown', subItems: ['Cabang', 'Berita', 'FAQ'] },
   { id: '/activities', type: 'link', label: 'Galeri' },
   { id: 'contact', type: 'link', label: 'Kontak' },
 ];
 
 const NavItem = ({ menuItem }) => {
+  const [dropDown, setDropDown] = useState(false);
+  const toggleDropdown = () => {
+    setDropDown(!dropDown);
+  };
+
   return (
     <li key={menuItem.id} className="relative group">
       {menuItem.type === 'link' ? (
@@ -22,18 +27,22 @@ const NavItem = ({ menuItem }) => {
           {menuItem.label}
         </Link>
       ) : (
-        <>
-          <Link to={menuItem.id} className="flex items-center p-3 border rounded-sm border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray ">
+        <div className="flex flex-col items-center">
+          <button className="flex items-center p-3 border rounded-sm border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray" onClick={toggleDropdown}>
             {menuItem.label} <MdOutlineArrowDropDown />
-          </Link>
-          <div className="hidden bg-customGray transition-all duration-500 pt-4 absolute bottom-0 right-0 translate-y-full group-hover:block w-max">
-            <ul className="flex flex-col shadow-lg border">
+          </button>
+          <div className={`${dropDown ? 'block' : 'hidden'} md:hidden md:bg-customGray transition-all duration-500 pt-4 md:absolute md:bottom-0  md:left-0 md:translate-y-full md:group-hover:block w-max rounded-md overflow-hidden`}>
+            <ul className="flex flex-col shadow-lg border text-center">
               {menuItem.subItems.map((sub) => {
-                return <Link className="hover:bg-customNavy hover:text-white px-4 py-2">{sub}</Link>;
+                return (
+                  <Link to={sub} className="hover:bg-customNavy hover:text-white px-4 py-2">
+                    {sub}
+                  </Link>
+                );
               })}
             </ul>
           </div>
-        </>
+        </div>
       )}
     </li>
   );
@@ -42,33 +51,6 @@ const NavItem = ({ menuItem }) => {
 // MAIN
 const Navbar = () => {
   const [nav, setNavVisible] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      // Periksa posisi scroll saat ini
-      const currentScrollPos = window.pageYOffset;
-
-      // Tentukan aturan untuk mengubah keadaan isScrolled
-      if (currentScrollPos > prevScrollPos) {
-        // Scroll ke bawah
-        setIsScrolled(true);
-      } else if (currentScrollPos === 0) {
-        // Scroll ke atas
-        setIsScrolled(false);
-      }
-
-      // Perbarui posisi scroll sebelumnya
-      setPrevScrollPos(currentScrollPos);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [prevScrollPos]);
 
   const handleNav = () => {
     setNavVisible(!nav);
@@ -76,9 +58,9 @@ const Navbar = () => {
 
   return (
     <section>
-      <header className={`${isScrolled ? 'md:opacity-80' : 'md:opacity-100'} container fixed flex justify-between top-0 h-20 max-w-full px-10 text-slate-800 bg-customGray border-2 shadow-lg z-10 items-center`}>
+      <header className={` container fixed flex justify-between top-0 h-20 max-w-full px-10 text-slate-800 bg-customGray border-2 shadow-lg z-10 items-center`}>
         <div>
-          <img src={logo} alt="logo" className="h-20" />
+          <img src={images.Logo} alt="logo" className="h-20" />
         </div>
         <div className="z-50 md:hidden">{!nav ? <AiOutlineMenu size={30} onClick={handleNav} /> : <AiOutlineClose size={30} onClick={handleNav} />}</div>
         <div
