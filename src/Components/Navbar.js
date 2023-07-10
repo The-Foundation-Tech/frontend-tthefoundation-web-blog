@@ -31,11 +31,15 @@ const NavItem = ({ menuItem }) => {
           <button className="flex items-center p-3 border rounded-sm border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray" onClick={toggleDropdown}>
             {menuItem.label} <MdOutlineArrowDropDown />
           </button>
-          <div className={`${dropDown ? 'block' : 'hidden'} md:hidden md:bg-customGray transition-all duration-500 pt-4 md:absolute md:bottom-0  md:left-0 md:translate-y-full md:group-hover:block w-max rounded-md overflow-hidden`}>
+          <div
+            className={`${
+              dropDown ? 'block' : 'hidden'
+            } md:hidden md:bg-customGray transition-all duration-500 pt-4 md:absolute md:bottom-0  md:left-0 md:translate-y-full md:group-hover:block w-max rounded-md overflow-hidden border border-slate-950`}
+          >
             <ul className="flex flex-col shadow-lg border text-center">
               {menuItem.subItems.map((sub) => {
                 return (
-                  <Link to={sub} className="hover:bg-customNavy hover:text-white px-4 py-2">
+                  <Link to={sub} className="hover:bg-slate-700 hover:text-white px-4 py-2">
                     {sub}
                   </Link>
                 );
@@ -60,7 +64,9 @@ const Navbar = () => {
     <section>
       <header className={` container fixed flex justify-between top-0 h-20 max-w-full px-10 text-slate-800 bg-customGray border-2 shadow-lg z-10 items-center`}>
         <div>
-          <img src={images.Logo} alt="logo" className="h-20" />
+          <Link to="/" className="block">
+            <img src={images.Logo} alt="logo" className="h-20" />
+          </Link>
         </div>
         <div className="z-50 md:hidden">{!nav ? <AiOutlineMenu size={30} onClick={handleNav} /> : <AiOutlineClose size={30} onClick={handleNav} />}</div>
         <div
