@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="bg-customBlue py-4 text-white">
       <div className="container px-10 flex flex-wrap gap-y-5 items-center justify-between">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 order-3 md:order-first">
           <img src={images.Logo2} className="w-14 h-14 sm:w-24 sm:h-24 bg-white rounded-md object-contain" alt="YMI" />
           <p className="text-sm">Hak Cipta &copy; 2023 Yayasan Munashoroh Indonesia.</p>
         </div>

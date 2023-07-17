@@ -1,15 +1,15 @@
 import MainLayout from '../../Components/MainLayout';
-import Berita from './container/Berita';
 import Cabang from './container/Cabang';
 import Hero from './container/Hero';
 import Program from './container/Program';
+import News from './container/News';
 
 const HomePage = () => {
   return (
     <MainLayout>
       <Hero />
       <Program />
-      <Berita />
+      <News />
       <Cabang />
     </MainLayout>
   );
