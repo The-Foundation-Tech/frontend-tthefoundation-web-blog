@@ -9,9 +9,9 @@ import { images } from '../constants';
 //ITEM NAVBAR
 const menuItems = [
   { id: '/', label: 'Profil', type: 'dropdown', subItems: ['Sejarah dan Profil', 'Visi dan Misi', 'Struktur Organisasi'] },
-  { id: '/about', label: 'Informasi', type: 'dropdown', subItems: ['Cabang', 'Berita', 'FAQ'] },
-  { id: '/activities', type: 'link', label: 'Galeri' },
-  { id: 'contact', type: 'link', label: 'Kontak' },
+  { id: '/informasi', label: 'Informasi', type: 'dropdown', subItems: ['Cabang', 'Berita', 'FAQ'] },
+  { id: '/galeri', type: 'link', label: 'Galeri' },
+  { id: '/contact', type: 'link', label: 'Kontak' },
 ];
 
 const NavItem = ({ menuItem }) => {
@@ -38,8 +38,10 @@ const NavItem = ({ menuItem }) => {
           >
             <ul className="flex flex-col shadow-lg border text-center">
               {menuItem.subItems.map((sub) => {
+                let transformedSub = '/' + sub.toLowerCase().replace(/\s/g, '-');
+
                 return (
-                  <Link to={sub} className="hover:bg-slate-700 hover:text-white px-4 py-2">
+                  <Link to={transformedSub} className="hover:bg-slate-700 hover:text-white px-4 py-2" key={sub}>
                     {sub}
                   </Link>
                 );

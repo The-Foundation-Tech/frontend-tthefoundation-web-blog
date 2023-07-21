@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Router } from 'react-router-dom';
 // import Home from './Components/Home';
 // import Contact from './Components/Contact';
 // import About from './Components/About';
@@ -8,23 +8,15 @@ import { Route, Routes } from 'react-router-dom';
 // import Berita from './Components/Main/Berita';
 // import Footer from './Components/Main/Footer';
 // import Cabang from './Components/Main/Cabang';
-import MainLayout from './Components/MainLayout';
 import HomePage from './pages/home/HomePage';
+import Sejarah from './pages/profileDetail/Sejarah';
 
 function App() {
   return (
     <div className="App font-opensans">
-      {/* <Navbar />
-      <Hero />
-      <Program />
-      <Berita />
-      <Cabang />
-      <Footer /> */}
-      <HomePage />
       <Routes>
-        {/* <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} /> */}
+        <Route path="/" element={<HomePage />} />
+        <Route path="/sejarah-dan-profil" element={<Sejarah />} />
       </Routes>
     </div>
   );
