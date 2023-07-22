@@ -9,7 +9,7 @@ import { images } from '../constants';
 //ITEM NAVBAR
 const menuItems = [
   { id: '/', label: 'Profil', type: 'dropdown', subItems: ['Sejarah dan Profil', 'Visi dan Misi', 'Struktur Organisasi'] },
-  { id: '/informasi', label: 'Informasi', type: 'dropdown', subItems: ['Cabang', 'Berita', 'FAQ'] },
+  { id: '/informasi', label: 'Informasi', type: 'dropdown', subItems: ['Cabang dan Mitra', 'Berita dan Kegiatan', 'FAQ'] },
   { id: '/galeri', type: 'link', label: 'Galeri' },
   { id: '/contact', type: 'link', label: 'Kontak' },
 ];
@@ -23,20 +23,20 @@ const NavItem = ({ menuItem }) => {
   return (
     <li key={menuItem.id} className="relative group">
       {menuItem.type === 'link' ? (
-        <Link to={menuItem.id} className="block p-3 border rounded-sm border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray ">
+        <Link to={menuItem.id} className="block p-3 md:border rounded-sm border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray ">
           {menuItem.label}
         </Link>
       ) : (
-        <div className="flex flex-col items-center">
-          <button className="flex items-center p-3 border rounded-sm border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray" onClick={toggleDropdown}>
+        <div className="flex flex-col items-center overflow-hidden">
+          <button className="flex items-center p-3 md:border rounded-sm border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray" onClick={toggleDropdown}>
             {menuItem.label} <MdOutlineArrowDropDown />
           </button>
           <div
             className={`${
               dropDown ? 'block' : 'hidden'
-            } md:hidden md:bg-customGray transition-all duration-500 pt-4 md:absolute md:bottom-0  md:left-0 md:translate-y-full md:group-hover:block w-max rounded-md overflow-hidden border border-slate-950`}
+            } md:hidden md:bg-customGray transition-all duration-500 pt-4 md:absolute md:bottom-0  md:left-0 md:translate-y-full rounded-lg overflow-hidden md:group-hover:block w-max md:border border-slate-950`}
           >
-            <ul className="flex flex-col shadow-lg border text-center">
+            <ul className="flex flex-col shadow-lg text-center rounded-lg bg-gray-100">
               {menuItem.subItems.map((sub) => {
                 let transformedSub = '/' + sub.toLowerCase().replace(/\s/g, '-');
 
@@ -74,7 +74,7 @@ const Navbar = () => {
         <div
           className={`${
             !nav ? '-right-full' : 'right-0'
-          } mt-[80px] md:mt-0 flex flex-col md:flex-row w-full md:w-auto justify-center fixed top-0 bottom-0 md:static gap-x-9 items-center z-[49] bg-gray-200 md:bg-inherit transition-all duration-300 ease-in-out`}
+          } mt-[80px] md:mt-0 flex flex-col md:flex-row w-full md:w-auto justify-center items-center fixed top-0 bottom-0 md:static gap-x-9  z-[49] bg-gray-200 md:bg-inherit transition-all duration-300 ease-in-out`}
         >
           <ul className="flex flex-col md:flex-row gap-x-3 gap-y-3 font-semibold">
             {menuItems.map((menuItem) => (

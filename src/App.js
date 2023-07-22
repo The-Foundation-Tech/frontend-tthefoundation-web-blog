@@ -1,15 +1,7 @@
-import { Route, Routes, Router } from 'react-router-dom';
-// import Home from './Components/Home';
-// import Contact from './Components/Contact';
-// import About from './Components/About';
-// import Hero from './Components/Main/Hero';
-// import Navbar from './Components/Main/Navbar';
-// import Program from './Components/Main/Program';
-// import Berita from './Components/Main/Berita';
-// import Footer from './Components/Main/Footer';
-// import Cabang from './Components/Main/Cabang';
+import { Route, Routes } from 'react-router-dom';
 import HomePage from './pages/home/HomePage';
-import Sejarah from './pages/profileDetail/Sejarah';
+import Sejarah from './pages/detail/Sejarah';
+import VisiMisi from './pages/detail/VisiMisi';
 
 function App() {
   return (
@@ -17,6 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/sejarah-dan-profil" element={<Sejarah />} />
+        <Route path="/visi-dan-misi" element={<VisiMisi />} />
       </Routes>
     </div>
   );

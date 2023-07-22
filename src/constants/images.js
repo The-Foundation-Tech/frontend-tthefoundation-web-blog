@@ -3,12 +3,19 @@ import Logo from '../assets/logo.png';
 import Camp from '../assets/camp.jpg';
 import Berita1 from '../assets/posts/berita1.jpg';
 import Logo2 from '../assets/ymi.png';
+import Ekonomi from '../assets/ekonomi.jpg';
+import Pendidikan from '../assets/pendidikan.jpg';
+import Kemanusiaan from '../assets/kemanusiaan.jpg';
+
 const images = {
   Logo,
   Hero,
   Camp,
   Berita1,
   Logo2,
+  Ekonomi,
+  Pendidikan,
+  Kemanusiaan,
 };
 
 export default images;
