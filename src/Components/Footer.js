@@ -3,6 +3,11 @@ import { BsInstagram, BsFacebook, BsWhatsapp } from 'react-icons/bs';
 import { BiDonateHeart } from 'react-icons/bi';
 
 const Footer = () => {
+  const handleWhatsAppClick = () => {
+    const message = 'Assalamualaikum, saya ingin berdonasi.';
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/6281296925202?text=${encodedMessage}`);
+  };
   return (
     <footer className="bg-customBlue py-4 text-white">
       <div className="container px-10 flex flex-wrap gap-y-5 items-center justify-between">
@@ -34,7 +39,7 @@ const Footer = () => {
           </div>
         </div>
         <div>
-          <button className=" mt-5 md:mt-0 border-2 border-customNavy px-5 rounded-full font-semibold hover:bg-customGray hover:text-black transition-all duration-300 flex">
+          <button className=" mt-5 md:mt-0 border-2 border-customNavy px-5 rounded-full font-semibold hover:bg-customGray hover:text-black transition-all duration-300 flex" onClick={handleWhatsAppClick}>
             <BiDonateHeart size={30} />
             <div className="pt-1 pl-1">Donasi</div>
           </button>
