@@ -4,7 +4,7 @@ import { images } from '../../constants';
 const Sejarah = () => {
   return (
     <MainLayout>
-      <section className="container bg-customGray pt-32 pb-20 mx-auto px-10 text-slate-950">
+      <section className=" bg-customGray pt-32 pb-20 mx-auto px-10 text-slate-950">
         <h1 className="text-3xl font-semibold text-customGray flex items-center justify-center w-fit px-7 h-10 mx-auto py-auto bg-customNavy shadow-md rounded-full mb-10">Sejarah YMI</h1>
         <div className="flex flex-col justify-center items-center">
           <div>

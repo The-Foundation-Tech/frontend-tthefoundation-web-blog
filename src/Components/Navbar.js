@@ -8,9 +8,9 @@ import { images } from '../constants';
 
 //ITEM NAVBAR
 const menuItems = [
-  { id: '/', label: 'Profil', type: 'dropdown', subItems: ['Profil Yayasan', 'Sejarah Yayasan'] },
+  { id: '/', type: 'link', label: 'Beranda' },
+  { id: '/Profil', label: 'Profil', type: 'dropdown', subItems: ['Profil Yayasan', 'Sejarah Yayasan'] },
   { id: '/informasi', label: 'Informasi', type: 'dropdown', subItems: ['Cabang dan Mitra', 'Berita dan Kegiatan', 'FAQ'] },
-  { id: '/galeri', type: 'link', label: 'Galeri' },
   { id: '/contact', type: 'link', label: 'Kontak' },
 ];
 
@@ -65,6 +65,10 @@ const Navbar = () => {
     window.open(`https://wa.me/6281296925202?text=${encodedMessage}`);
   };
 
+  const handleCopyToClipboard = (textToCopy) => {
+    navigator.clipboard.writeText(textToCopy);
+  };
+
   return (
     <section>
       <header className={` container fixed flex justify-between top-0 h-20 max-w-full px-10 text-slate-800 bg-customGray border-2 shadow-lg z-10 items-center`}>
@@ -92,7 +96,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* modal */}
+        {/* Donasi */}
         {showModal ? (
           <>
             <div className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50">
@@ -104,21 +108,39 @@ const Navbar = () => {
                       <AiOutlineClose size={30} onClick={() => setShowModal(false)} />
                     </button>
                   </div>
-                  <div className="flex flex-col py-10 px-5">
-                    <div>
-                      <h3>BNI</h3>
-                      <h5>1312412</h5>
+                  <div className="flex flex-col py-10 px-5 gap-3">
+                    <div className="flex flex-col items-center">
+                      <img src={images.BRI} alt="bri" className="h-12 mb-2" />
+                      <div className="flex items-center">
+                        <h5>103.0004968810</h5>
+                        <button className="ml-2 py-1 px-2 bg-blue-500 text-white text-sm rounded-md transition" onClick={() => handleCopyToClipboard('103.0004968810')}>
+                          Copy
+                        </button>
+                      </div>
+                      <h4 className="font-semibold">a.n Yayasan Munashoroh Indonesia</h4>
                     </div>
-                    <div>
-                      <h3>BCA</h3>
-                      <h5>1312412</h5>
+                    <div className="flex flex-col items-center">
+                      <img src={images.Mandiri} alt="mandiri" className="h-12" />
+                      <div className="flex items-center">
+                        <h5>0420.01.00.0202.305</h5>
+                        <button className="ml-2 py-1 px-2 bg-blue-500 text-white text-sm rounded-md transition" onClick={() => handleCopyToClipboard('0420.01.00.0202.305')}>
+                          Copy
+                        </button>
+                      </div>
+                      <h4 className="font-semibold">a.n Yayasan Munashoroh Indonesia</h4>
                     </div>
-                    <div>
-                      <h3>BRI</h3>
-                      <h5>1312412</h5>
+                    <div className="flex flex-col items-center">
+                      <img src={images.BSI} alt="bsi" className="h-10 mb-2" />
+                      <div className="flex items-center">
+                        <h5>7237272147</h5>
+                        <button className="ml-2 py-1 px-2 bg-blue-500 text-white text-sm rounded-md transition " onClick={() => handleCopyToClipboard('7237272147')}>
+                          Copy
+                        </button>
+                      </div>
+                      <h4 className="font-semibold">a.n Yayasan Munashoroh Indonesia</h4>
                     </div>
                   </div>
-                  <div className="flex items-center p-8 border-t border-solid border-blueGray-200 rounded-b">
+                  <div className="flex items-center justify-center p-8 border-t border-solid border-blueGray-200 rounded-b">
                     <button className="mt-5 md:mt-0 border-2 border-slate-900 px-5 rounded-full font-semibold hover:bg-slate-900 hover:text-white transition-all duration-300 flex items-center" type="button" onClick={handleWhatsAppClick}>
                       Kirim Bukti
                       <MdOutlineArrowCircleRight size={30} />
