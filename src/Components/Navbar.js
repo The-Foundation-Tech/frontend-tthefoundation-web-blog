@@ -10,8 +10,8 @@ import { images } from '../constants';
 const menuItems = [
   { id: '/', type: 'link', label: 'Beranda' },
   { id: '/Profil', label: 'Profil', type: 'dropdown', subItems: ['Profil Yayasan', 'Sejarah Yayasan'] },
-  { id: '/informasi', label: 'Informasi', type: 'dropdown', subItems: ['Cabang dan Mitra', 'Berita dan Kegiatan', 'FAQ'] },
-  { id: '/contact', type: 'link', label: 'Kontak' },
+  { id: '/informasi', label: 'Informasi', type: 'dropdown', subItems: ['Cabang dan Mitra', 'Berita dan Kegiatan'] },
+  { id: '/kontak', type: 'link', label: 'Kontak' },
 ];
 
 const NavItem = ({ menuItem }) => {
@@ -23,14 +23,14 @@ const NavItem = ({ menuItem }) => {
   return (
     <li key={menuItem.id} className="relative group">
       {menuItem.type === 'link' ? (
-        <Link to={menuItem.id} className="block p-3 md:border rounded-sm border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray ">
+        <Link to={menuItem.id} className="text-center block p-3 md:border rounded-lg border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray ">
           {menuItem.label}
         </Link>
       ) : (
         <div className="flex flex-col items-center overflow-hidden">
-          <button className="flex items-center p-3 md:border rounded-sm border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray" onClick={toggleDropdown}>
+          <div className="flex items-center p-3 md:border rounded-lg border-slate-800 m-2 hover:bg-slate-700 hover:text-customGray cursor-pointer" onClick={toggleDropdown}>
             {menuItem.label} <MdOutlineArrowDropDown />
-          </button>
+          </div>
           <div className={`${dropDown ? 'block' : 'hidden'} md:hidden transition-all duration-500 md:absolute md:bottom-0  md:left-0 md:translate-y-full rounded-lg overflow-hidden md:group-hover:block w-max md:border border-slate-950`}>
             <ul className="flex flex-col shadow-lg text-center rounded-lg bg-gray-100">
               {menuItem.subItems.map((sub) => {
@@ -60,7 +60,7 @@ const Navbar = () => {
   };
 
   const handleWhatsAppClick = () => {
-    const message = 'Assalamualaikum, saya ingin berdonasi.';
+    const message = 'Assalamualaikum, Saya atas nama ......... sudah berdonasi. Bukti transfer : ';
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/6281296925202?text=${encodedMessage}`);
   };
@@ -99,7 +99,7 @@ const Navbar = () => {
         {/* Donasi */}
         {showModal ? (
           <>
-            <div className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50">
+            <div className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 text-black">
               <div className="relative w-auto my-6 mx-auto max-w-3xl">
                 <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                   <div className="flex items-start justify-between p-5 border-b border-solid border-gray-300 rounded-t ">
@@ -113,7 +113,7 @@ const Navbar = () => {
                       <img src={images.BRI} alt="bri" className="h-12 mb-2" />
                       <div className="flex items-center">
                         <h5>103.0004968810</h5>
-                        <button className="ml-2 py-1 px-2 bg-blue-500 text-white text-sm rounded-md transition" onClick={() => handleCopyToClipboard('103.0004968810')}>
+                        <button className="ml-2 py-1 px-2 bg-blue-500 text-white text-sm rounded-md transition focus:bg-slate-700" onClick={() => handleCopyToClipboard('103.0004968810')}>
                           Copy
                         </button>
                       </div>
@@ -123,7 +123,7 @@ const Navbar = () => {
                       <img src={images.Mandiri} alt="mandiri" className="h-12" />
                       <div className="flex items-center">
                         <h5>0420.01.00.0202.305</h5>
-                        <button className="ml-2 py-1 px-2 bg-blue-500 text-white text-sm rounded-md transition" onClick={() => handleCopyToClipboard('0420.01.00.0202.305')}>
+                        <button className="ml-2 py-1 px-2 bg-blue-500 text-white text-sm rounded-md transition focus:bg-slate-700" onClick={() => handleCopyToClipboard('0420.01.00.0202.305')}>
                           Copy
                         </button>
                       </div>
@@ -133,7 +133,7 @@ const Navbar = () => {
                       <img src={images.BSI} alt="bsi" className="h-10 mb-2" />
                       <div className="flex items-center">
                         <h5>7237272147</h5>
-                        <button className="ml-2 py-1 px-2 bg-blue-500 text-white text-sm rounded-md transition " onClick={() => handleCopyToClipboard('7237272147')}>
+                        <button className="ml-2 py-1 px-2 bg-blue-500 text-white text-sm rounded-md transition focus:bg-slate-700 " onClick={() => handleCopyToClipboard('7237272147')}>
                           Copy
                         </button>
                       </div>
@@ -142,7 +142,7 @@ const Navbar = () => {
                   </div>
                   <div className="flex items-center justify-center p-8 border-t border-solid border-blueGray-200 rounded-b">
                     <button className="mt-5 md:mt-0 border-2 border-slate-900 px-5 rounded-full font-semibold hover:bg-slate-900 hover:text-white transition-all duration-300 flex items-center" type="button" onClick={handleWhatsAppClick}>
-                      Kirim Bukti
+                      Konfirmasi
                       <MdOutlineArrowCircleRight size={30} />
                     </button>
                   </div>

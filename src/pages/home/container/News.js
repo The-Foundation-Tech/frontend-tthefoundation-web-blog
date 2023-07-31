@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { images } from '../../../constants';
 import { HiArrowNarrowRight } from 'react-icons/hi';
 
@@ -32,10 +33,12 @@ const News = () => {
           <NewsCard newsItem={newsItem} />
         ))}
       </div>
-      <button className="mx-auto flex items-center gap-x-2 font-bold border-2 border-slate-950 px-3 py-2 rounded-lg mt-10 bg-customGray hover:scale-105 duration-300">
-        <span>Berita Lainnya</span>
-        <HiArrowNarrowRight size={25} />
-      </button>
+      <Link to="/berita-dan-kegiatan">
+        <button className="mx-auto flex items-center gap-x-2 font-bold border-2 border-slate-950 px-3 py-2 rounded-lg mt-10 bg-customGray hover:scale-105 duration-300">
+          <span>Berita Lainnya</span>
+          <HiArrowNarrowRight size={25} />
+        </button>
+      </Link>
     </section>
   );
 };

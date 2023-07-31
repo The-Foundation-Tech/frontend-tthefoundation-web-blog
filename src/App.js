@@ -6,6 +6,10 @@ import Profil from './pages/detail/Profil';
 import Sejarah from './pages/detail/Sejarah';
 import axios from 'axios';
 import Cabang from './pages/detail/Cabang';
+import Berita from './pages/detail/BeritaKegiatan';
+import Kontak from './pages/detail/Kontak';
+import DetailBerita from './pages/detailBerita/News';
+import NotFound from './pages/NotFound';
 
 axios.defaults.baseURL = 'http://localhost:5000/api';
 
@@ -28,6 +32,11 @@ function App() {
         <Route path="/profil-yayasan" element={<Profil />} />
         <Route path="/sejarah-yayasan" element={<Sejarah />} />
         <Route path="/cabang-dan-mitra" element={<Cabang />} />
+        <Route path="/berita-dan-kegiatan" element={<Berita />} />
+        <Route path="/kontak" element={<Kontak />} />
+        <Route path="/detailberita" element={<DetailBerita />} />
+
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );

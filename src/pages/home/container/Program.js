@@ -14,7 +14,7 @@ const Program = () => {
             <img src={images.Pendidikan} alt="camp" className="w-52 h-52 object-cover rounded-md mx-auto " />
           </div>
           <div>
-            <ul className="list-decimal pl-4 text-[0.9rem">
+            <ul className="list-decimal pl-4 text-[0.9rem]">
               <li>Program Orang Tua Asuh Yatim Desa</li>
               <li>Beasiswa Asrama Tahfidz Quran</li>
               <li>Madrasah Tsanawiyah YMI di Desa</li>
